@@ -68,6 +68,7 @@ if ($sectionResult->numRows() > 0) {
 $settings['env_path'] = trim($admin->get_post('env_path'));
 $settings['env_url'] = trim($admin->get_post('env_url'));
 $settings['env_script'] = trim($admin->get_post('env_script'));
+$settings['language'] = trim($admin->get_post('language'));
 $settings['charset'] = trim($admin->get_post('charset'));
 $settings['css'] = trim($admin->get_post('css'));
 $settings['listingUrl'] = trim($admin->get_post('listingUrl'));

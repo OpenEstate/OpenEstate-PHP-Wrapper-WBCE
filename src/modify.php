@@ -249,16 +249,12 @@ if ($environment !== null) {
                 $indexSettings['order_by'] = 'ObjectId';
             if (!isset($indexSettings['order_dir']))
                 $indexSettings['order_dir'] = 'desc';
-            if (!isset($indexSettings['lang']))
-                $indexSettings['lang'] = $environment->getLanguage();
 
             // load expose settings
             $exposeSettings = (isset($settings['expose']) && is_array($settings['expose'])) ?
                 $settings['expose'] : array();
             if (!isset($exposeSettings['id']))
                 $exposeSettings['id'] = '';
-            if (!isset($exposeSettings['lang']))
-                $exposeSettings['lang'] = $environment->getLanguage();
 
             // load favorite settings
             $favSettings = (isset($settings['fav']) && is_array($settings['fav'])) ?
@@ -269,10 +265,10 @@ if ($environment !== null) {
                 $favSettings['order_by'] = 'ObjectId';
             if (!isset($favSettings['order_dir']))
                 $favSettings['order_dir'] = 'desc';
-            if (!isset($favSettings['lang']) || $favSettings['lang'] == '')
-                $favSettings['lang'] = $environment->getLanguage();
 
             // load further settings
+            if (!isset($settings['language']) || $settings['language'] == '')
+                $settings['language'] = $environment->getLanguage();
             if (!isset($settings['charset']) || $settings['charset'] == '')
                 $settings['charset'] = $environment->getConfig()->charset;
             if (!isset($settings['css']))
@@ -399,24 +395,6 @@ if ($environment !== null) {
                 }
                 ?>
 
-                <tr>
-                    <td>
-                        <label for="openestate_index_lang"><?= html($module_i18n['view_index_language']) ?></label>
-                    </td>
-                    <td>
-                        <select id="openestate_index_lang" name="index[lang]">
-                            <?php
-                            foreach ($environment->getLanguageCodes() as $code) {
-                                $selected = ($indexSettings['lang'] === $code) ? 'selected="selected"' : '';
-                                echo '<option value="' . $code . '" ' . $selected . '>'
-                                    . html($environment->getLanguageName($code))
-                                    . '</option>';
-                            }
-                            ?>
-                        </select>
-                    </td>
-                </tr>
-
             </table>
 
             <h3>
@@ -436,24 +414,6 @@ if ($environment !== null) {
                     <td>
                         <input id="openestate_expose_id" name="expose[id]" type="text" maxlength="100"
                                value="<?= html($exposeSettings['id']) ?>"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="openestate_expose_lang"><?= html($module_i18n['view_expose_language']) ?></label>
-                    </td>
-                    <td>
-                        <select id="openestate_expose_lang" name="expose[lang]">
-                            <?php
-                            foreach ($environment->getLanguageCodes() as $code) {
-                                $selected = ($exposeSettings['lang'] === $code) ? 'selected="selected"' : '';
-                                echo '<option value="' . $code . '" ' . $selected . '>'
-                                    . html($environment->getLanguageName($code))
-                                    . '</option>';
-                            }
-                            ?>
-                        </select>
                     </td>
                 </tr>
 
@@ -524,28 +484,29 @@ if ($environment !== null) {
                     </td>
                 </tr>
 
+            </table>
+
+            <h2><?= html($module_i18n['options']) ?></h2>
+            <table class="openestate-wrapper-admin">
+
                 <tr>
                     <td>
-                        <label for="openestate_fav_lang"><?= html($module_i18n['view_fav_language']) ?></label>
+                        <label for="openestate_language"><?= html($module_i18n['options_language']) ?></label>
                     </td>
                     <td>
-                        <select id="openestate_fav_lang" name="fav[lang]">
+                        <select id="openestate_language" name="language">
                             <?php
                             foreach ($environment->getLanguageCodes() as $code) {
-                                $selected = ($favSettings['lang'] === $code) ? 'selected="selected"' : '';
+                                $selected = ($settings['language'] === $code) ? 'selected="selected"' : '';
                                 echo '<option value="' . $code . '" ' . $selected . '>'
                                     . html($environment->getLanguageName($code))
                                     . '</option>';
                             }
                             ?>
-                        </select>
+                        </select><br>
+                        <em><?= html($module_i18n['options_language_info']) ?></em>
                     </td>
                 </tr>
-
-            </table>
-
-            <h2><?= html($module_i18n['options']) ?></h2>
-            <table class="openestate-wrapper-admin">
 
                 <tr>
                     <td>

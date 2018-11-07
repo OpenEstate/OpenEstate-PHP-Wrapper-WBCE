@@ -49,7 +49,6 @@ $i18n['view_index'] = 'Property listing';
 $i18n['view_index_view'] = 'view';
 $i18n['view_index_view_detail'] = 'as table';
 $i18n['view_index_view_thumb'] = 'as thumbnails';
-$i18n['view_index_language'] = 'language';
 $i18n['view_index_order'] = 'order';
 $i18n['view_index_order_asc'] = 'ascending';
 $i18n['view_index_order_desc'] = 'descending';
@@ -58,20 +57,20 @@ $i18n['view_index_filter'] = 'filter by %s';
 // Exposéansicht
 $i18n['view_expose'] = 'Property details';
 $i18n['view_expose_id'] = 'property ID';
-$i18n['view_expose_language'] = 'language';
 
 // Vormerkliste
 $i18n['view_fav'] = 'Favorites';
 $i18n['view_fav_view'] = 'view';
 $i18n['view_fav_view_detail'] = 'as table';
 $i18n['view_fav_view_thumb'] = 'as thumbnails';
-$i18n['view_fav_language'] = 'language';
 $i18n['view_fav_order'] = 'order';
 $i18n['view_fav_order_asc'] = 'ascending';
 $i18n['view_fav_order_desc'] = 'descending';
 
 // Optionen
 $i18n['options'] = 'Further options';
+$i18n['options_language'] = 'language';
+$i18n['options_language_info'] = 'This language is used for the embedded contents.';
 $i18n['options_charset'] = 'charset';
 $i18n['options_charset_info'] = 'Enter the charset, that is used on this website.';
 $i18n['options_css'] = 'stylesheet';

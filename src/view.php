@@ -101,6 +101,14 @@ if (!is_string($wrap) && isset($settings['env_script'])) {
     $wrap = $settings['env_script'];
 }
 
+// setup language
+if (isset($settings['language'])) {
+    $lang = (isset($settings['language'])) ? strtolower(trim($settings['language'])) : null;
+    if ($lang != null && $environment->isSupportedLanguage($lang)) {
+        $environment->setLanguage($lang);
+    }
+}
+
 ob_start();
 
 try {
@@ -115,13 +123,6 @@ try {
         $exposeSettings = (isset($settings['expose']) && is_array($settings['expose'])) ?
             $settings['expose'] : array();
 
-        if (isset($exposeSettings['lang'])) {
-            $lang = (isset($exposeSettings['lang'])) ? strtolower(trim($exposeSettings['lang'])) : null;
-            if ($lang != null && $environment->isSupportedLanguage($lang)) {
-                $environment->setLanguage($lang);
-            }
-        }
-
         if ($view->getObjectId() == null) {
             $view->setObjectId(isset($exposeSettings['id']) ? $exposeSettings['id'] : null);
         }
@@ -133,13 +134,6 @@ try {
 
         $favSettings = (isset($settings['fav']) && is_array($settings['fav'])) ?
             $settings['fav'] : array();
-
-        if (isset($favSettings['lang'])) {
-            $lang = (isset($favSettings['lang'])) ? strtolower(trim($favSettings['lang'])) : null;
-            if ($lang != null && $environment->isSupportedLanguage($lang)) {
-                $environment->setLanguage($lang);
-            }
-        }
 
         if (!isset($_REQUEST['wrap']) && !isset($_REQUEST['update'])) {
             $environment->getSession()->setFavoritePage(null);
@@ -158,13 +152,6 @@ try {
 
         $indexSettings = (isset($settings['index']) && is_array($settings['index'])) ?
             $settings['index'] : array();
-
-        if (isset($indexSettings['lang'])) {
-            $lang = (isset($indexSettings['lang'])) ? strtolower(trim($indexSettings['lang'])) : null;
-            if ($lang != null && $environment->isSupportedLanguage($lang)) {
-                $environment->setLanguage($lang);
-            }
-        }
 
         if (!isset($_REQUEST['wrap']) && !isset($_REQUEST['update'])) {
             $environment->getSession()->setListingPage(null);

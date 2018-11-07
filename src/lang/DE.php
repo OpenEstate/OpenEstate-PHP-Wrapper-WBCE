@@ -49,7 +49,6 @@ $i18n['view_index'] = 'Immobilienübersicht';
 $i18n['view_index_view'] = 'Ansicht';
 $i18n['view_index_view_detail'] = 'als Liste';
 $i18n['view_index_view_thumb'] = 'als Galerie';
-$i18n['view_index_language'] = 'Sprache';
 $i18n['view_index_order'] = 'Sortierung';
 $i18n['view_index_order_asc'] = 'aufsteigend';
 $i18n['view_index_order_desc'] = 'absteigend';
@@ -58,20 +57,20 @@ $i18n['view_index_filter'] = 'nach %s filtern';
 // Exposéansicht
 $i18n['view_expose'] = 'Exposéansicht';
 $i18n['view_expose_id'] = 'ID der Immobilie';
-$i18n['view_expose_language'] = 'Sprache';
 
 // Vormerkliste
 $i18n['view_fav'] = 'Vormerkliste';
 $i18n['view_fav_view'] = 'Ansicht';
 $i18n['view_fav_view_detail'] = 'als Liste';
 $i18n['view_fav_view_thumb'] = 'als Galerie';
-$i18n['view_fav_language'] = 'Sprache';
 $i18n['view_fav_order'] = 'Sortierung';
 $i18n['view_fav_order_asc'] = 'aufsteigend';
 $i18n['view_fav_order_desc'] = 'absteigend';
 
 // Optionen
 $i18n['options'] = 'Weitere Optionen';
+$i18n['options_language'] = 'Sprache';
+$i18n['options_language_info'] = 'Diese Sprache wird für die eingebundenen Inhalte verwendet.';
 $i18n['options_charset'] = 'Zeichensatz';
 $i18n['options_charset_info'] = 'Enter the charset, that is used on this website.';
 $i18n['options_css'] = 'Stylesheet';
